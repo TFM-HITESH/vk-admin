@@ -83,6 +83,7 @@ model Order {
   isPaid     Boolean   @default(false)
   phone      String    @default("")
   address    String    @default("")
+  email      String    @default("")
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
 
@@ -136,4 +137,14 @@ model Image {
   updatedAt   DateTime @updatedAt
 
   @@index([productId])
+}
+
+model User { 
+  id          String    @id @default(uuid())
+  userName    String
+  password    String
+  
+  defaultPhone      String    @default("")
+  defaultAddress    String    @default("")
+  defaultEmail      String    @default("")  
 }
